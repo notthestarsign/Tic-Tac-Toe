@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #333333;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #f5a623;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #444444;
+}
+
+.cell.taken {
+    pointer-events: none;
+}
+
+/* Status and Buttons */
+.status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.restart-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #f5a623;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-button:hover {
+    background-color: #e59420;
+}
+
+/* Name Prompt */
+.name-prompt {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.name-prompt input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Winner Popup */
+.winner-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: popup 0.5s ease-out;
+}
+
+.winner-popup.hidden {
+    display: none;
+}
+
+.winner-popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f5a623;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.winner-popup button:hover {
+    background-color: #e59420;
+}
+
+/* Animations */
+@keyframes popup {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
